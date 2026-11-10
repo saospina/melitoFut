@@ -17,9 +17,10 @@ describe("CI workflow", () => {
   });
 
   it("runs lint, typecheck, tests and build in the check job", () => {
-    const commands = Object.values(workflow.jobs.check.steps)
-      .map((step: { run?: string }) => step.run)
-      .filter((run: string | undefined) => run !== undefined);
+    const steps: Array<{ run?: string }> = workflow.jobs.check.steps;
+    const commands = steps
+      .map((step) => step.run)
+      .filter((run): run is string => run !== undefined);
 
     expect(commands).toEqual([
       "pnpm install --frozen-lockfile",
