@@ -29,7 +29,7 @@
 - **Work:** create `tests/config/workflow.test.ts` (parses `.github/workflows/ci.yml` with `yaml`: `check` job runs on `pull_request` and `push` to `main`; `deploy` job runs only on `push` to `main` and has `needs: check`), `tests/config/package.test.ts` (the `test` script does not contain `passWithNoTests`), and `tests/config/constitution.test.ts` (`specs/constitution.md` contains `## 7. Spec Template`).
 - **Verifies:** the workflow test fails because `ci.yml` does not exist yet; the package test passes or fails depending on T1. The constitution test passes immediately because the file already exists. That is correct and noted here.
 
-### [ ] T5 · Environment variable tests
+### [x] T5 · Environment variable tests
 - **Covers:** criteria 8, 9, 10, 11
 - **Work:** create `tests/env/boot.test.ts` (boot fails when `WA_ACCESS_TOKEN` is missing, passes when it is set); `tests/env/lazy.test.ts` (missing `SUPABASE_URL` or other secrets throw an error naming the variable when used, not at boot); `tests/env/window-minutes.test.ts` (unset → 1440; `"1440"` → 1440; `"0"`, `"-5"`, `"1.5"`, `"abc"` → error).
 - **Verifies:** all three fail because `src/lib/env.ts` does not exist.
