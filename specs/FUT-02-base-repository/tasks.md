@@ -108,7 +108,7 @@
 
 ## Phase 4 · Deployment
 
-### [ ] T20 · CI check job
+### [x] T20 · CI check job
 - **Covers:** criteria 1, 3
 - **Work:** create `.github/workflows/ci.yml` with triggers `pull_request` and `push` to `main`. The `check` job uses Node 22, `pnpm/action-setup` pinned to 9.15.0, `pnpm install --frozen-lockfile`, then `pnpm lint`, `pnpm typecheck`, `pnpm test`, and `pnpm build`. Add `concurrency` to cancel superseded PR runs.
 - **Verifies:** the `check` part of `tests/config/workflow.test.ts` passes; `actionlint` reports no errors if available.
