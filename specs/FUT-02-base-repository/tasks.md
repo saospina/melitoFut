@@ -49,7 +49,7 @@
 - **Work:** create `tests/whatsapp/errors.test.ts` covering the full table in `plan.md` §4: 131047 → `window_closed`; 130429 → `rate_limited` (retryable); 131026, 132000, 100 and other 4xx → `meta_rejected`; 5xx → retryable; unknown code → `meta_rejected`.
 - **Verifies:** fails because `mapMetaError` does not exist.
 
-### [ ] T9 · `sendTemplate` tests
+### [x] T9 · `sendTemplate` tests
 - **Covers:** criteria 6, 9
 - **Work:** create `tests/whatsapp/send-template.test.ts` using MSW. Cover the full request body (no `+` in `to`), headers, a successful result with `wa_message_id`, a Meta error, a timeout, a network error, and a `config` error with zero requests when `PHONE_NUMBER_ID` is missing. Compare whole objects.
 - **Verifies:** fails because `createWhatsAppClient` does not exist.
