@@ -86,7 +86,7 @@
 - **Work:** implement `mapMetaError(status, body)` in `src/lib/whatsapp/errors.ts`.
 - **Verifies:** `tests/whatsapp/errors.test.ts` passes.
 
-### [ ] T16 · WhatsApp client: `sendTemplate`
+### [x] T16 · WhatsApp client: `sendTemplate`
 - **Covers:** criteria 6, 9
 - **Work:** implement `createWhatsAppClient(config)` in `src/lib/whatsapp/client.ts` with `GRAPH_API_VERSION = "v21.0"` (provisional, see `plan.md` R2), an injectable `fetch`, a 10-second timeout via `AbortSignal.timeout`, `import "server-only"`, and `sendTemplate`.
 - **Verifies:** `tests/whatsapp/send-template.test.ts` passes.
