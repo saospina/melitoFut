@@ -12,7 +12,7 @@
 - **Work:** add runtime dependencies `zod`, `server-only`, `@supabase/supabase-js`; dev dependencies `vitest`, `msw`, `yaml`. Add scripts `test` (`vitest run`, without `passWithNoTests`) and `typecheck` (`tsc --noEmit`). Update `pnpm-lock.yaml`.
 - **Verifies:** `pnpm install --frozen-lockfile` succeeds; `pnpm typecheck` passes; `pnpm test` fails with "no test files found" (expected until T4).
 
-### [ ] T2 · Vitest config and support files
+### [x] T2 · Vitest config and support files
 - **Covers:** criterion 12
 - **Work:** create `vitest.config.ts` (`@/*` alias; `server-only` aliased to a no-op module), `tests/setup/server-only.ts`, and `tests/setup/msw.ts` (MSW server lifecycle, with unhandled requests reported as errors).
 - **Verifies:** `pnpm typecheck` passes; `pnpm test` still fails only because no tests exist yet.
