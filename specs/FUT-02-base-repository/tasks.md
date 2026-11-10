@@ -81,7 +81,7 @@
 - **Work:** implement `isWindowOpen({ lastInboundAt, now, windowMinutes })` in `src/lib/whatsapp/window.ts`.
 - **Verifies:** `tests/whatsapp/window.test.ts` passes.
 
-### [ ] T15 · Meta error mapping
+### [x] T15 · Meta error mapping
 - **Covers:** criterion 6
 - **Work:** implement `mapMetaError(status, body)` in `src/lib/whatsapp/errors.ts`.
 - **Verifies:** `tests/whatsapp/errors.test.ts` passes.
