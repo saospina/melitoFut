@@ -118,7 +118,7 @@
 - **Work:** add a `deploy` job that runs only on `push` to `main`, has `needs: check`, and POSTs to `secrets.VERCEL_DEPLOY_HOOK_URL`.
 - **Verifies:** the `deploy` part of `tests/config/workflow.test.ts` passes. The deploy job does not run on pull requests.
 
-### [ ] T22 · Build without secrets
+### [x] T22 · Build without secrets
 - **Covers:** criterion 8 (boot check does not run at build time)
 - **Work:** no code change expected. Run `pnpm build` with no runtime secrets set. If it fails because something reads environment variables at import time, fix that import, keeping the check in `register()` (`plan.md` R5).
 - **Verifies:** the build succeeds with an empty secret environment.
