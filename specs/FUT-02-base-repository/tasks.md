@@ -17,7 +17,7 @@
 - **Work:** create `vitest.config.ts` (`@/*` alias; `server-only` aliased to a no-op module), `tests/setup/server-only.ts`, and `tests/setup/msw.ts` (MSW server lifecycle, with unhandled requests reported as errors).
 - **Verifies:** `pnpm typecheck` passes; `pnpm test` still fails only because no tests exist yet.
 
-### [ ] T3 · Shared WhatsApp types
+### [x] T3 · Shared WhatsApp types
 - **Covers:** criterion 6 (typed results)
 - **Work:** create `src/lib/whatsapp/types.ts` (`Result`, `SendTemplateInput`, `SendTextInput`, `SendResult`, template component types) and `src/lib/whatsapp/errors.ts` (type `WhatsAppError` with `kind` and `retryable` only; no logic).
 - **Verifies:** `pnpm typecheck` passes under `strict`.
