@@ -39,7 +39,7 @@
 - **Work:** create `tests/whatsapp/phone.test.ts`. Accept `+573001234567`. Reject `300 123 4567`, `3001234567`, `+0123`, `+57 300…`, and empty input.
 - **Verifies:** fails because `phone.ts` does not exist.
 
-### [ ] T7 · Window countdown tests
+### [x] T7 · Window countdown tests
 - **Covers:** criteria 7, 10
 - **Work:** create `tests/whatsapp/window.test.ts`: open before the limit; closed exactly at `lastInboundAt + windowMinutes`; `lastInboundAt: null` → closed; `remainingMs` is correct; custom `windowMinutes` (for example 60) is respected.
 - **Verifies:** fails because `window.ts` does not exist.
