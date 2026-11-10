@@ -113,7 +113,7 @@
 - **Work:** create `.github/workflows/ci.yml` with triggers `pull_request` and `push` to `main`. The `check` job uses Node 22, `pnpm/action-setup` pinned to 9.15.0, `pnpm install --frozen-lockfile`, then `pnpm lint`, `pnpm typecheck`, `pnpm test`, and `pnpm build`. Add `concurrency` to cancel superseded PR runs.
 - **Verifies:** the `check` part of `tests/config/workflow.test.ts` passes; `actionlint` reports no errors if available.
 
-### [ ] T21 · CI deploy job
+### [x] T21 · CI deploy job
 - **Covers:** criterion 2
 - **Work:** add a `deploy` job that runs only on `push` to `main`, has `needs: check`, and POSTs to `secrets.VERCEL_DEPLOY_HOOK_URL`.
 - **Verifies:** the `deploy` part of `tests/config/workflow.test.ts` passes. The deploy job does not run on pull requests.
