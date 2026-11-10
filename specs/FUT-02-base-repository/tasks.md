@@ -96,7 +96,7 @@
 - **Work:** implement `sendText` in `client.ts`. Validate E.164, evaluate the window using an injectable `now` before calling `fetch`, and return `window_closed` or `config` without sending a request.
 - **Verifies:** `tests/whatsapp/send-text.test.ts` passes.
 
-### [ ] T18 · Lazy `getWhatsAppClient`
+### [x] T18 · Lazy `getWhatsAppClient`
 - **Covers:** criteria 6, 9
 - **Work:** add `getWhatsAppClient()`, which reads environment variables on first use, not at import time.
 - **Verifies:** the `config` case in `send-template.test.ts` passes; importing the module without variables does not throw.

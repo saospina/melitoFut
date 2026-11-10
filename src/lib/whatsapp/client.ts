@@ -1,5 +1,6 @@
 import "server-only";
 import { z } from "zod";
+import { readWindowMinutes } from "../env";
 import { mapMetaError, type WhatsAppError } from "./errors";
 import { isE164 } from "./phone";
 import type {
@@ -167,4 +168,32 @@ async function postMessage(
   }
 
   return { ok: true, value: { wa_message_id: parsed.data.messages[0].id } };
+}
+
+// Reads configuration at call time, not at import, so a missing variable
+// returns a config error instead of breaking the module.
+export function getWhatsAppClient(
+  env: Record<string, string | undefined> = process.env,
+): WhatsAppClient {
+  let windowMinutes: number;
+
+  try {
+    windowMinutes = readWindowMinutes(env);
+  } catch (error) {
+    const invalid = failure({
+      kind: "config",
+      message:
+        error instanceof Error
+          ? error.message
+          : "Invalid WhatsApp configuration",
+      retryable: false,
+    });
+    return { sendTemplate: async () => invalid, sendText: async () => invalid };
+  }
+
+  return createWhatsAppClient({
+    accessToken: env.WA_ACCESS_TOKEN ?? "",
+    phoneNumberId: env.PHONE_NUMBER_ID ?? "",
+    windowMinutes,
+  });
 }
