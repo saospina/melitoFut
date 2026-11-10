@@ -44,7 +44,7 @@
 - **Work:** create `tests/whatsapp/window.test.ts`: open before the limit; closed exactly at `lastInboundAt + windowMinutes`; `lastInboundAt: null` → closed; `remainingMs` is correct; custom `windowMinutes` (for example 60) is respected.
 - **Verifies:** fails because `window.ts` does not exist.
 
-### [ ] T8 · Meta error mapping tests
+### [x] T8 · Meta error mapping tests
 - **Covers:** criterion 6
 - **Work:** create `tests/whatsapp/errors.test.ts` covering the full table in `plan.md` §4: 131047 → `window_closed`; 130429 → `rate_limited` (retryable); 131026, 132000, 100 and other 4xx → `meta_rejected`; 5xx → retryable; unknown code → `meta_rejected`.
 - **Verifies:** fails because `mapMetaError` does not exist.
