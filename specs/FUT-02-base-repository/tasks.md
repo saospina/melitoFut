@@ -59,7 +59,7 @@
 - **Work:** create `tests/whatsapp/send-text.test.ts`: sends when the window is open; returns `window_closed` with zero requests recorded in MSW when the window is closed; same when `lastInboundAt` is `null`; returns `config` with zero requests when `WA_CUSTOMER_WINDOW_MINUTES` is invalid.
 - **Verifies:** fails because `sendText` does not exist.
 
-### [ ] T11 · Supabase client and key-leak tests
+### [x] T11 · Supabase client and key-leak tests
 - **Covers:** criterion 5 (and the service-role-key leakage edge case)
 - **Work:** create `tests/supabase/server.test.ts` (builds the client with URL and key; throws without the key) and `tests/security/no-public-service-key.test.ts` (scans `src/` for `NEXT_PUBLIC_` alongside `SERVICE` or `SECRET`; confirms `src/lib/supabase/server.ts` and `src/lib/whatsapp/client.ts` import `server-only`).
 - **Verifies:** fails because the modules do not exist. The leak scan may already pass, and that is recorded in the task.
