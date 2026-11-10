@@ -91,7 +91,7 @@
 - **Work:** implement `createWhatsAppClient(config)` in `src/lib/whatsapp/client.ts` with `GRAPH_API_VERSION = "v21.0"` (provisional, see `plan.md` R2), an injectable `fetch`, a 10-second timeout via `AbortSignal.timeout`, `import "server-only"`, and `sendTemplate`.
 - **Verifies:** `tests/whatsapp/send-template.test.ts` passes.
 
-### [ ] T17 · WhatsApp client: `sendText` with window guard
+### [x] T17 · WhatsApp client: `sendText` with window guard
 - **Covers:** criteria 6, 7, 11
 - **Work:** implement `sendText` in `client.ts`. Validate E.164, evaluate the window using an injectable `now` before calling `fetch`, and return `window_closed` or `config` without sending a request.
 - **Verifies:** `tests/whatsapp/send-text.test.ts` passes.

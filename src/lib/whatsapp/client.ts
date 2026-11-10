@@ -2,7 +2,13 @@ import "server-only";
 import { z } from "zod";
 import { mapMetaError, type WhatsAppError } from "./errors";
 import { isE164 } from "./phone";
-import type { Result, SendResult, SendTemplateInput } from "./types";
+import type {
+  Result,
+  SendResult,
+  SendTemplateInput,
+  SendTextInput,
+} from "./types";
+import { isWindowOpen } from "./window";
 
 // Provisional: confirm the current version before release (plan.md R2).
 export const GRAPH_API_VERSION = "v21.0";
@@ -21,6 +27,7 @@ export type WhatsAppClient = {
   sendTemplate(
     input: SendTemplateInput,
   ): Promise<Result<SendResult, WhatsAppError>>;
+  sendText(input: SendTextInput): Promise<Result<SendResult, WhatsAppError>>;
 };
 
 const messageResponse = z.object({
@@ -77,6 +84,33 @@ export function createWhatsAppClient(
           language: { code: input.language },
           components: input.components,
         },
+      });
+    },
+
+    async sendText(input) {
+      const missingConfig = configError();
+      if (missingConfig) return missingConfig;
+      if (!isE164(input.to)) return invalidPhone;
+
+      const window = isWindowOpen({
+        lastInboundAt: input.lastInboundAt,
+        now: config.now ? config.now() : new Date(),
+        windowMinutes: config.windowMinutes,
+      });
+      if (!window.open) {
+        return failure({
+          kind: "window_closed",
+          message: "Customer-service window is closed",
+          retryable: false,
+        });
+      }
+
+      return postMessage(config, {
+        messaging_product: "whatsapp",
+        recipient_type: "individual",
+        to: input.to.slice(1),
+        type: "text",
+        text: { preview_url: false, body: input.body },
       });
     },
   };
