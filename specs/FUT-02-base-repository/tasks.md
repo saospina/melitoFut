@@ -66,7 +66,7 @@
 
 ## Phase 3 · Implementation
 
-### [ ] T12 · Environment module and boot check
+### [x] T12 · Environment module and boot check
 - **Covers:** criteria 8, 9, 10, 11
 - **Work:** create `src/lib/env.ts` (`assertBootEnv`, `readRequiredEnv`, `readWindowMinutes` using `zod`) and `src/instrumentation.ts` (`register()` calls `assertBootEnv`).
 - **Verifies:** `tests/env/*.test.ts` pass.
