@@ -34,7 +34,7 @@
 - **Work:** create `tests/env/boot.test.ts` (boot fails when `WA_ACCESS_TOKEN` is missing, passes when it is set); `tests/env/lazy.test.ts` (missing `SUPABASE_URL` or other secrets throw an error naming the variable when used, not at boot); `tests/env/window-minutes.test.ts` (unset → 1440; `"1440"` → 1440; `"0"`, `"-5"`, `"1.5"`, `"abc"` → error).
 - **Verifies:** all three fail because `src/lib/env.ts` does not exist.
 
-### [ ] T6 · E.164 validation tests
+### [x] T6 · E.164 validation tests
 - **Covers:** criterion 6 (edge case: invalid phone)
 - **Work:** create `tests/whatsapp/phone.test.ts`. Accept `+573001234567`. Reject `300 123 4567`, `3001234567`, `+0123`, `+57 300…`, and empty input.
 - **Verifies:** fails because `phone.ts` does not exist.
