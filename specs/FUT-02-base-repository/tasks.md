@@ -24,7 +24,7 @@
 
 ## Phase 2 · Failing tests
 
-### [ ] T4 · Repository configuration tests
+### [x] T4 · Repository configuration tests
 - **Covers:** criteria 1, 2, 3, 4
 - **Work:** create `tests/config/workflow.test.ts` (parses `.github/workflows/ci.yml` with `yaml`: `check` job runs on `pull_request` and `push` to `main`; `deploy` job runs only on `push` to `main` and has `needs: check`), `tests/config/package.test.ts` (the `test` script does not contain `passWithNoTests`), and `tests/config/constitution.test.ts` (`specs/constitution.md` contains `## 7. Spec Template`).
 - **Verifies:** the workflow test fails because `ci.yml` does not exist yet; the package test passes or fails depending on T1. The constitution test passes immediately because the file already exists. That is correct and noted here.
