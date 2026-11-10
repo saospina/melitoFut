@@ -71,7 +71,7 @@
 - **Work:** create `src/lib/env.ts` (`assertBootEnv`, `readRequiredEnv`, `readWindowMinutes` using `zod`) and `src/instrumentation.ts` (`register()` calls `assertBootEnv`).
 - **Verifies:** `tests/env/*.test.ts` pass.
 
-### [ ] T13 · E.164 validation
+### [x] T13 · E.164 validation
 - **Covers:** criterion 6
 - **Work:** implement `isE164` in `src/lib/whatsapp/phone.ts` with the pattern `^\+[1-9]\d{7,14}$`.
 - **Verifies:** `tests/whatsapp/phone.test.ts` passes.
