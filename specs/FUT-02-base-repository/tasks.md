@@ -140,7 +140,7 @@
 
 ## Phase 5 · Closing (Definition of Done)
 
-### [ ] T26 · Final verification and traceability check
+### [x] T26 · Final verification and traceability check
 - **Covers:** criterion 12 and `constitution.md` §6 (acceptance criteria covered by tests)
 - **Work:**
   1. Run `pnpm lint`, `pnpm typecheck`, `pnpm test`, and `pnpm build` locally. All must pass.
