@@ -54,7 +54,7 @@
 - **Work:** create `tests/whatsapp/send-template.test.ts` using MSW. Cover the full request body (no `+` in `to`), headers, a successful result with `wa_message_id`, a Meta error, a timeout, a network error, and a `config` error with zero requests when `PHONE_NUMBER_ID` is missing. Compare whole objects.
 - **Verifies:** fails because `createWhatsAppClient` does not exist.
 
-### [ ] T10 · `sendText` tests
+### [x] T10 · `sendText` tests
 - **Covers:** criteria 6, 7, 11
 - **Work:** create `tests/whatsapp/send-text.test.ts`: sends when the window is open; returns `window_closed` with zero requests recorded in MSW when the window is closed; same when `lastInboundAt` is `null`; returns `config` with zero requests when `WA_CUSTOMER_WINDOW_MINUTES` is invalid.
 - **Verifies:** fails because `sendText` does not exist.
