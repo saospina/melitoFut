@@ -123,7 +123,7 @@
 - **Work:** no code change expected. Run `pnpm build` with no runtime secrets set. If it fails because something reads environment variables at import time, fix that import, keeping the check in `register()` (`plan.md` R5).
 - **Verifies:** the build succeeds with an empty secret environment.
 
-### [ ] T23 · Environment and setup documentation
+### [x] T23 · Environment and setup documentation
 - **Covers:** criteria 2, 8, 12 (manual steps documented)
 - **Work:** create `.env.example` with names and blank values. Confirm `.gitignore` ignores `.env*` except `.env.example`. Update `README.md` with the variable table, the PR-to-`main` flow, the manual Vercel and branch-protection steps, and the golden rule of assertions.
 - **Verifies:** `git check-ignore .env.local` reports the file as ignored; `.env.example` contains no real values.
