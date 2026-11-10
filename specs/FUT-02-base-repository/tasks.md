@@ -76,7 +76,7 @@
 - **Work:** implement `isE164` in `src/lib/whatsapp/phone.ts` with the pattern `^\+[1-9]\d{7,14}$`.
 - **Verifies:** `tests/whatsapp/phone.test.ts` passes.
 
-### [ ] T14 · Window countdown
+### [x] T14 · Window countdown
 - **Covers:** criteria 7, 10
 - **Work:** implement `isWindowOpen({ lastInboundAt, now, windowMinutes })` in `src/lib/whatsapp/window.ts`.
 - **Verifies:** `tests/whatsapp/window.test.ts` passes.
