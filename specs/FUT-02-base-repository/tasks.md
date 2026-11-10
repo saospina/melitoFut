@@ -101,7 +101,7 @@
 - **Work:** add `getWhatsAppClient()`, which reads environment variables on first use, not at import time.
 - **Verifies:** the `config` case in `send-template.test.ts` passes; importing the module without variables does not throw.
 
-### [ ] T19 · Server Supabase client
+### [x] T19 · Server Supabase client
 - **Covers:** criterion 5
 - **Work:** implement `createSupabaseServerClient()` in `src/lib/supabase/server.ts` with `import "server-only"`. It runs no queries.
 - **Verifies:** `tests/supabase/server.test.ts` and `tests/security/no-public-service-key.test.ts` pass.
